@@ -8,4 +8,8 @@ class Api::MoviesController < ApplicationController
       render "all-movies.json.jb" 
     end   
   end
+  def new_arrivals
+    @movies = Movie.order(created_at: :desc)
+    render "all-movies.json.jb"
+  end
 end
