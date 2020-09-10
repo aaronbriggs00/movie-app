@@ -1,0 +1,5 @@
+{
+  title: @movie[:title],
+  year: @movie[:year],
+  plot: @movie[:plot]
+}
