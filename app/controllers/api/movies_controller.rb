@@ -1,15 +1,14 @@
 class Api::MoviesController < ApplicationController
-  def movie_action
-    if params[:id] != "all"
-      @movie = Movie.find_by(id: params[:id])
-      render "movie.json.jb"
-    else
-      @movies = Movie.all
-      render "all-movies.json.jb" 
-    end   
+  def index
+    @movies = Movie.all
+    render "index.json.jb" 
+  end
+  def show
+    @movie = Movie.find(params[:id])
+    render "show.json.jb"
   end
   def new_arrivals
     @movies = Movie.order(created_at: :desc)
-    render "all-movies.json.jb"
+    render "index.json.jb"
   end
 end
