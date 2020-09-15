@@ -1,5 +1,6 @@
 @movies.map do |movie|
   {
+    id: movie[:id],
     title: movie[:title],
     year: movie[:year],
     plot: movie[:plot]
