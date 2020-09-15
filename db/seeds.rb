@@ -11,6 +11,6 @@
 # end
 
 10.times do
-  movie = Movie.new({title: FFaker::Movie.title, year: Faker::Number.number(digits: 4), plot: FFaker::Lorem.paragraph})
-  movie.save
+  actor = Actor.new({first_name: FFaker::Name.first_name, last_name: FFaker::Name.last_name, known_for: FFaker::Movie.title})
+  actor.save
 end
