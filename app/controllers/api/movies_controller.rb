@@ -11,12 +11,12 @@ class Api::MoviesController < ApplicationController
     Movie.create(title: params[:title], year: params[:year], plot: params[:plot])
   end
   def update
-    movie = Movie.find(params[:id])
-    movie.title = params[:title] || movie.title
-    movie.year = params[:year] || movie.year
-    movie.plot = params[:plot] || movie.plot
-    movie.save
-    render json: {message: "updated successfully probably"}
+    @movie = Movie.find(params[:id])
+    @movie.title = params[:title] || @movie.title
+    @movie.year = params[:year] || @movie.year
+    @movie.plot = params[:plot] || @movie.plot
+    @movie.save
+    render "show.json.jb"
   end
   def destroy
     Movie.find(params[:id]).destroy
