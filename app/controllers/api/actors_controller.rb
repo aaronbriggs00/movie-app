@@ -1,6 +1,6 @@
 class Api::ActorsController < ApplicationController
   def index
-    @actors = Actor.all
+    @actors =   
     render "index.json.jb"
   end
   def show
