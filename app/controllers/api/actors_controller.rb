@@ -1,6 +1,6 @@
 class Api::ActorsController < ApplicationController
   def index
-    @actors =   
+    @actors = Actor.all
     render "index.json.jb"
   end
   def show
@@ -14,6 +14,7 @@ class Api::ActorsController < ApplicationController
     @actor.known_for = params[:known_for] || @actor.known_for 
     @actor.gender = params[:gender] || @actor.gender 
     @actor.age = params[:age] || @actor.age 
+    @actor.movie_id = params[:movie_id] || @actor.movie_id
     if @actor.save
       render json: show.json.jb
     else
@@ -26,7 +27,8 @@ class Api::ActorsController < ApplicationController
       last_name: params[:last_name],
       known_for: params[:known_for],
       gender: params[:gender],
-      age: params[:age],
+      age: params[:age]
+      movie_id: params[:movie_id],
       )
     if @actor.save
       render "show.json.jb"
