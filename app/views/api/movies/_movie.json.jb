@@ -4,5 +4,6 @@
   year: movie[:year],
   plot: movie[:plot],
   director: movie[:director],
-  english: movie[:english]
+  english: movie[:english],
+  genres: movie.genres
 }
