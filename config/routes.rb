@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     post "/actors" => "actors#create"
     delete "/actors/:id" => "actors#destroy"
 
+    #genres
+    get "/movie_genres" => "movie_genres#index"
+    post "/movie_genres" => "movie_genres#create"
+
     #nonsense
     get "/movies/new_arrivals" => "movies#new_arrivals"
   end 

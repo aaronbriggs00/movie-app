@@ -1,0 +1,7 @@
+@movie_genres.map do |movie_genre|
+  {
+    id: movie_genre.id,
+    movie_id: movie_genre.movie_id,
+    genre_id: movie_genre.genre_id
+  }
+end
