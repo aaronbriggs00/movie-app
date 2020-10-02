@@ -1,0 +1,23 @@
+<h1><%= @movie.title %></h1>
+<div>Year: <%= @movie.year %></div>
+<div>Directed by: <%= @movie.director %></div>
+<p></p>
+<div>Plot: <%= @movie.plot %></div>
+<p>Genres:</p>
+<% @movie.genres.each do |genre|%>
+  <div><%= genre.name %></div>
+<% end %>
+
+
+<p></p>
+<form method="POST" action="/review">
+  Name: <input type="text" name="username">
+  <input type="submit">
+</form>
+<br>
+<textarea rows="4" cols="50" name="review" form="usrform">
+Enter review here...</textarea>
+
+
+
+
