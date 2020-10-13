@@ -28,7 +28,7 @@ class Api::ActorsController < ApplicationController
       last_name: params[:last_name],
       known_for: params[:known_for],
       gender: params[:gender],
-      age: params[:age]
+      age: params[:age],
       movie_id: params[:movie_id],
       )
     if @actor.save
